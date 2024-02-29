@@ -1,0 +1,43 @@
+﻿@model Car
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> Localizer
+
+<div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">@Model.Mark <span class="text-muted">@Model.Model</span></h2>
+            <p class="lead">@Model.Description</p>
+
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+            <h6 class="border-bottom border-gray pb-2 mb-0">@Model.Fuel</h6>
+            <div class="media text-muted pt-3">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="" />
+                @*
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">@Model.Fuel</strong>
+                    @Model.Strength - @Model.BodyWork - @Model.Contact -@Model.EngineDisplacement
+                </p>
+                *@
+            </div>
+        </div>
+
+         
+        </div>
+
+          <div class="col-md-5">
+                <img class="img-fluid" src="https://via.placeholder.com/200x300" alt="" />
+                <img class="img-fluid" src="https://via.placeholder.com/200x300" alt="" />
+                <br />
+                <br />
+                <h5>@Localizer["Year Of Manufacture"]: @Model.YearOfManufacture</h5><br />
+                <h5>@Localizer["Strength"]: @Model.Strength</h5> <br />
+                <h5>@Localizer["Body Work"]: @Model.BodyWork</h5> <br />
+                <h5>@Localizer["Engine Displacement"]: @Model.EngineDisplacement</h5> <br />
+                <h6>@Localizer["Seller contact"]: @Model.Contact</h6> <br />
+
+          </div>
+         
+
+</div>
+
+        <hr class="featurette-divider">

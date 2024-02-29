@@ -1,0 +1,104 @@
+﻿@model Car
+
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> Localizer
+
+
+
+<form method="post" asp-controller="Car" asp-action="Add">
+    
+
+  <div class="form-group">
+    <label for="">@Localizer["Mark"]</label>
+    <input type="text" class="form-control" asp-for="Mark"  placeholder="@Localizer["Mark"]">
+        <span asp-validation-for="Mark" class="text-danger"></span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="">@Localizer["Model"]</label>
+    <input type="text" class="form-control" asp-for="Model" placeholder="@Localizer["Model"]">
+            <span asp-validation-for="Model" class="text-danger"></span>
+
+  </div>
+  
+  <div class="form-group">
+    <label for="">@Localizer["Year Of Manufacture"]</label>
+    <input type="text" class="form-control" asp-for="YearOfManufacture" placeholder="@Localizer["Year Of Manufacture"]">
+            <span asp-validation-for="YearOfManufacture" class="text-danger"></span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="">@Localizer["Engine Displacement"]</label>
+    <input type="text" class="form-control" asp-for="EngineDisplacement" placeholder="@Localizer["Engine Displacement"]">
+            <span asp-validation-for="EngineDisplacement" class="text-danger"></span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="">@Localizer["Strength"]</label>
+    <input type="text" class="form-control" asp-for="Strength" placeholder="@Localizer["Strength"]">
+            <span asp-validation-for="Strength" class="text-danger"></span>
+
+  </div>
+
+  
+  <div class="form-group">
+    <label for="">@Localizer["Fuel"]</label><br />
+    <select asp-for="Fuel">
+               @*<select asp-for="FuelCategory" asp-items="@Html.GetEnumSelectList<FuelCategory>()" class="form-control">*@
+                   @*bolja solucija bi bilo da sam napravio enum klasu i ubacio vrijednosti za tip goriva,kao i enum za karoserije*@
+
+        <option>Dizel</option>
+        <option>Benzin</option>
+        <option>Hibrid</option>
+        <option>Elektricni pogon</option>
+        <option>Plin</option>
+
+    </select>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="">@Localizer["Body Work"]</label><br />
+    <select asp-for="BodyWork">
+        <option>Hecbek</option>
+        <option>SUV</option>
+        <option>Limuzina</option>
+        <option>Karavan</option>
+        <option>Kupe</option>
+        <option>Kabriolet</option>
+        <option>Pickup</option>
+
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="">@Localizer["Description"]</label>
+    <textarea type="text" class="form-control" asp-for="Description" placeholder="@Localizer["Description"]"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="">@Localizer["Price"]</label>
+    <input type="text" class="form-control" asp-for="Price" placeholder="@Localizer["Price"]">
+            <span asp-validation-for="Price" class="text-danger"></span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="">@Localizer["Phone number"]</label>
+    <input type="text" class="form-control" asp-for="Contact" placeholder="@Localizer["Phone number"]">
+       <small id="emailHelp" class="form-text text-muted">@Localizer["We guarantee for data security"]</small>
+               <span asp-validation-for="Contact" class="text-danger"></span>
+
+
+  </div>
+
+  <br />
+  
+  <button type="submit" class="btn btn-primary">@Localizer["Submit"]</button>
+</form>
